@@ -1695,14 +1695,6 @@ const JournalPage: React.FC = () => {
   );
 };
 
-// --- MOCK DATA ---
-// Added a real image URL here so the "Experience This" card works immediately
-const CHONGQING_JOURNEY = {
-  title: "Chongqing: The Cyberpunk City",
-  image: "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1000&auto=format&fit=crop", 
-  category: "Destinations"
-};
-
 const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   // Assuming JOURNAL_ARTICLES is imported or defined in your full file
