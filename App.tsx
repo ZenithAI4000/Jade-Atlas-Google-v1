@@ -1039,17 +1039,17 @@ const HomePage: React.FC = () => {
       {/* FINAL CTA – VISUALLY SEPARATED FROM FOOTER */}
       <Section
         bg="dark"
-        className="relative border-t border-jade-800 bg-gradient-to-b from-jade-950 via-jade-900 to-jade-900"
+        className="relative border-t border-imperial-800 bg-gradient-to-b from-imperial-950 via-imperial-900 to-imperial-900"
       >
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-mist-50 mb-6">
             The East is waiting.
           </h2>
-          <p className="text-jade-200 text-base md:text-lg mb-6">
+          <p className="text-imperial-200 text-base md:text-lg mb-6">
             One private conversation can turn the idea of seeing China one day into a clear and comfortable plan that
             feels right for you.
           </p>
-          <p className="text-jade-300 text-xs md:text-sm mb-10">
+          <p className="text-imperial-300 text-xs md:text-sm mb-10">
             Consultations are complimentary and relaxed. There is no pressure and no hard sell. You receive honest
             guidance on whether a Jade Atlas Journey matches what you have in mind.
           </p>
@@ -1060,12 +1060,12 @@ const HomePage: React.FC = () => {
             <Button
               to="/book"
               variant="outline"
-              className="!text-mist-50 !border-jade-700 hover:!bg-jade-800"
+              className="!text-mist-50 !border-imperial-700 hover:!bg-imperial-800"
             >
               Direct Reservation
             </Button>
           </div>
-          <p className="text-jade-400 text-[10px] mt-6 uppercase tracking-[0.25em]">
+          <p className="text-imperial-400 text-[10px] mt-6 uppercase tracking-[0.25em]">
             Small groups · Limited departures · Early interest appreciated
           </p>
         </div>
