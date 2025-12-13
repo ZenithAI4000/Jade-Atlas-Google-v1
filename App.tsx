@@ -1695,10 +1695,6 @@ const JournalPage: React.FC = () => {
   );
 };
 
-import React, { useState } from 'react';
-import { useParams, Navigate, Link } from 'react-router-dom';
-import { Clock, Facebook, Link as LinkIcon, CheckCircle } from 'lucide-react'; 
-
 // --- MOCK DATA ---
 // Added a real image URL here so the "Experience This" card works immediately
 const CHONGQING_JOURNEY = {
