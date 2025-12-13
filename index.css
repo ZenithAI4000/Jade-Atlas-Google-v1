@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* Global styles for Jade Atlas Journeys */
 
 * {
   margin: 0;
@@ -7,10 +7,9 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fffdf9;
 }
 
 h1, h2, h3, h4, h5, h6 {
