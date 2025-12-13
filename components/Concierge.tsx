@@ -50,45 +50,45 @@ export const Concierge: React.FC = () => {
       {/* THE WINDOW */}
       <div 
         className={`
-          bg-white border border-jade-100 shadow-2xl rounded-sm w-80 md:w-96 overflow-hidden transition-all duration-300 origin-bottom-right flex flex-col
+          bg-white border border-emerald-100 shadow-2xl rounded-sm w-80 md:w-96 overflow-hidden transition-all duration-300 origin-bottom-right flex flex-col
           ${isOpen ? 'opacity-100 scale-100 translate-y-0 h-[500px]' : 'opacity-0 scale-95 translate-y-4 pointer-events-none h-0'}
         `}
       >
         {/* HEADER */}
-        <div className="bg-jade-950 p-4 flex justify-between items-center shrink-0">
+        <div className="bg-emerald-950 p-4 flex justify-between items-center shrink-0">
            {view === 'contact' ? (
-             <button onClick={() => setView('chat')} className="text-jade-300 hover:text-gold-500 flex items-center gap-1 text-xs uppercase tracking-widest font-bold">
+             <button onClick={() => setView('chat')} className="text-emerald-300 hover:text-champagne-500 flex items-center gap-1 text-xs uppercase tracking-widest font-bold">
                <ChevronLeft className="w-4 h-4" /> Back to Chat
              </button>
            ) : (
              <div>
-               <h3 className="font-serif text-lg text-mist-50">Jade Concierge</h3>
+               <h3 className="font-serif text-lg text-ivory-50">Jade Concierge</h3>
                <div className="flex items-center gap-2 mt-1">
                  <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                 <p className="text-[10px] uppercase tracking-widest text-jade-300">Online</p>
+                 <p className="text-[10px] uppercase tracking-widest text-emerald-300">Online</p>
                </div>
              </div>
            )}
-           
+
            <div className="flex items-center gap-3">
              {/* Toggle to Human Support */}
              {view === 'chat' && (
-               <button 
+               <button
                  onClick={() => setView('contact')}
-                 className="text-gold-500 hover:text-white text-[10px] uppercase tracking-widest border border-gold-500 hover:bg-gold-500 hover:border-transparent px-2 py-1 rounded-sm transition-all"
+                 className="text-champagne-500 hover:text-white text-[10px] uppercase tracking-widest border border-champagne-500 hover:bg-champagne-500 hover:border-transparent px-2 py-1 rounded-sm transition-all"
                  title="Speak to a Human"
                >
                  Human Support
                </button>
              )}
-             <button onClick={() => setIsOpen(false)} className="text-jade-400 hover:text-white">
+             <button onClick={() => setIsOpen(false)} className="text-emerald-400 hover:text-white">
                <X className="w-5 h-5" />
              </button>
            </div>
         </div>
 
         {/* BODY CONTENT (Switches based on View) */}
-        <div className="flex-grow bg-mist-50 overflow-hidden relative">
+        <div className="flex-grow bg-ivory-50 overflow-hidden relative">
           
           {/* VIEW 1: AI CHAT */}
           {view === 'chat' && (

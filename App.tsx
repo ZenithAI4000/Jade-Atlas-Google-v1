@@ -10,7 +10,7 @@ import { AlertTriangle } from "lucide-react";
 
 
 // --- CONSTANTS & DATA ---
-const PREMIUM_CHECKBOX_CLASSES = "appearance-none w-4 h-4 border border-jade-300 rounded-sm bg-white checked:bg-jade-900 checked:border-jade-900 checked:bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22white%22%3E%3Cpath%20d%3D%22M12.207%204.793a1%201%200%20010%201.414l-5%205a1%201%200%2001-1.414%200l-2-2a1%201%200%20011.414-1.414L6.5%209.086l4.293-4.293a1%201%200%20011.414%200z%22%2F%3E%3C%2Fsvg%3E')] checked:bg-center checked:bg-no-repeat hover:bg-jade-50 transition-all cursor-pointer mt-0.5 shrink-0 focus:outline-none focus:ring-1 focus:ring-jade-500";
+const PREMIUM_CHECKBOX_CLASSES = "appearance-none w-4 h-4 border border-emerald-300 rounded-sm bg-white checked:bg-emerald-900 checked:border-emerald-900 checked:bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22white%22%3E%3Cpath%20d%3D%22M12.207%204.793a1%201%200%20010%201.414l-5%205a1%201%200%2001-1.414%200l-2-2a1%201%200%20011.414-1.414L6.5%209.086l4.293-4.293a1%201%200%20011.414%200z%22%2F%3E%3C%2Fsvg%3E')] checked:bg-center checked:bg-no-repeat hover:bg-emerald-50 transition-all cursor-pointer mt-0.5 shrink-0 focus:outline-none focus:ring-1 focus:ring-emerald-500";
 
 // --- RICH JOURNAL DATA (7 Articles: Destinations, Culture, Culinary, Travel Guidance) ---
 const JOURNAL_ARTICLES = [
@@ -229,8 +229,8 @@ const ScrollToTop = () => {
 const Section: React.FC<{ className?: string; children: React.ReactNode; bg?: 'white' | 'mist' | 'dark' }> = ({ className = '', children, bg = 'white' }) => {
   const backgrounds = {
     white: 'bg-white',
-    mist: 'bg-mist-50',
-    dark: 'bg-jade-950 text-mist-50'
+    mist: 'bg-ivory-50',
+    dark: 'bg-emerald-950 text-ivory-50'
   };
   return (
     <section className={`py-16 md:py-24 px-6 ${backgrounds[bg]} ${className}`}>
@@ -269,38 +269,38 @@ const PhoneInput: React.FC<{
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <label className="block text-[10px] uppercase tracking-widest font-bold text-gold-600 mb-2">
+      <label className="block text-[10px] uppercase tracking-widest font-bold text-champagne-600 mb-2">
         Mobile Number {required && <span className="text-red-400">*</span>}
       </label>
       <div className="flex">
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2 bg-white border border-jade-200 border-r-0 rounded-l-sm px-3 py-3 text-jade-900 hover:bg-mist-50 focus:outline-none min-w-[100px] transition-colors"
+          className="flex items-center gap-2 bg-white border border-emerald-200 border-r-0 rounded-l-sm px-3 py-3 text-emerald-900 hover:bg-ivory-50 focus:outline-none min-w-[100px] transition-colors"
         >
           <span className="text-lg">{selectedCountry.flag}</span>
           <span className="text-sm font-medium">{selectedCountry.dial}</span>
-          <ChevronDown className="w-3 h-3 text-jade-400 ml-auto" />
+          <ChevronDown className="w-3 h-3 text-emerald-400 ml-auto" />
         </button>
         <input
           type="tel"
           value={value}
           onChange={(e) => onValueChange(e.target.value)}
           placeholder="Phone number"
-          className="flex-grow bg-white border border-jade-200 rounded-r-sm p-3 text-jade-900 focus:outline-none focus:border-gold-500 transition-colors placeholder:text-jade-300"
+          className="flex-grow bg-white border border-emerald-200 rounded-r-sm p-3 text-emerald-900 focus:outline-none focus:border-champagne-500 transition-colors placeholder:text-emerald-300"
           required={required}
         />
       </div>
       {isOpen && (
-        <div className="absolute top-[calc(100%+4px)] left-0 w-[300px] bg-white border border-jade-100 shadow-xl z-50 max-h-60 overflow-hidden flex flex-col rounded-sm animate-fade-in text-left">
-          <div className="p-2 border-b border-jade-50 bg-mist-50 relative">
-            <Search className="w-3 h-3 text-jade-400 absolute left-4 top-1/2 -translate-y-1/2" />
+        <div className="absolute top-[calc(100%+4px)] left-0 w-[300px] bg-white border border-emerald-100 shadow-xl z-50 max-h-60 overflow-hidden flex flex-col rounded-sm animate-fade-in text-left">
+          <div className="p-2 border-b border-emerald-50 bg-ivory-50 relative">
+            <Search className="w-3 h-3 text-emerald-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               placeholder="Search country..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full text-xs p-2 pl-8 border border-jade-200 !bg-white !text-jade-900 rounded-sm focus:outline-none focus:border-gold-500"
+              className="w-full text-xs p-2 pl-8 border border-emerald-200 !bg-white !text-emerald-900 rounded-sm focus:outline-none focus:border-champagne-500"
               autoFocus
             />
           </div>
@@ -314,15 +314,15 @@ const PhoneInput: React.FC<{
                   setIsOpen(false);
                   setSearch('');
                 }}
-                className="w-full flex items-center gap-3 px-4 py-2 hover:bg-mist-50 text-left transition-colors border-b border-jade-50 last:border-0"
+                className="w-full flex items-center gap-3 px-4 py-2 hover:bg-ivory-50 text-left transition-colors border-b border-emerald-50 last:border-0"
               >
                 <span className="text-lg">{c.flag}</span>
-                <span className="text-sm text-jade-900 flex-grow truncate">{c.name}</span>
-                <span className="text-xs text-jade-400 font-mono">{c.dial}</span>
+                <span className="text-sm text-emerald-900 flex-grow truncate">{c.name}</span>
+                <span className="text-xs text-emerald-400 font-mono">{c.dial}</span>
               </button>
             ))}
             {filteredCountries.length === 0 && (
-              <div className="p-4 text-xs text-jade-400 text-center">No countries found</div>
+              <div className="p-4 text-xs text-emerald-400 text-center">No countries found</div>
             )}
           </div>
         </div>
@@ -344,10 +344,10 @@ const JourneyCalendar: React.FC<{
   return (
     <div className="grid md:grid-cols-2 gap-8 mt-4">
       {months.map((month, idx) => (
-        <div key={idx} className="border border-jade-100 p-4 bg-white">
-          <h4 className="text-center font-serif text-jade-900 mb-4">{month.name}</h4>
+        <div key={idx} className="border border-emerald-100 p-4 bg-white">
+          <h4 className="text-center font-serif text-emerald-900 mb-4">{month.name}</h4>
           <div className="grid grid-cols-7 gap-1 text-center text-xs mb-2">
-            {['S','M','T','W','T','F','S'].map(d => <span key={d} className="text-jade-300">{d}</span>)}
+            {['S','M','T','W','T','F','S'].map(d => <span key={d} className="text-emerald-300">{d}</span>)}
           </div>
           <div className="grid grid-cols-7 gap-1">
              {Array.from({ length: month.startDay }).map((_, i) => <div key={`empty-${i}`} />)}
@@ -356,7 +356,7 @@ const JourneyCalendar: React.FC<{
                const isAvailable = month.available.includes(day);
                const dateStr = `${month.name.split(' ')[0]} ${day}, ${month.name.split(' ')[1]}`;
                const isSelected = selectedDate === dateStr;
-               
+
                return (
                  <button
                    key={day}
@@ -364,9 +364,9 @@ const JourneyCalendar: React.FC<{
                    onClick={(e) => { e.preventDefault(); isAvailable && onSelectDate(dateStr); }}
                    className={`
                      aspect-square flex items-center justify-center text-xs transition-all duration-300
-                     ${isSelected ? 'bg-jade-900 text-gold-500 scale-110 shadow-lg' : ''}
-                     ${isAvailable && !isSelected ? 'bg-jade-50 text-jade-900 hover:bg-gold-500 hover:text-white cursor-pointer font-bold' : ''}
-                     ${!isAvailable ? 'text-jade-200 cursor-not-allowed' : ''}
+                     ${isSelected ? 'bg-emerald-900 text-champagne-500 scale-110 shadow-lg' : ''}
+                     ${isAvailable && !isSelected ? 'bg-emerald-50 text-emerald-900 hover:bg-champagne-500 hover:text-white cursor-pointer font-bold' : ''}
+                     ${!isAvailable ? 'text-emerald-200 cursor-not-allowed' : ''}
                    `}
                  >
                    {day}
@@ -377,9 +377,9 @@ const JourneyCalendar: React.FC<{
         </div>
       ))}
       <div className="md:col-span-2 text-center mt-2">
-        <p className="text-[10px] text-jade-400 uppercase tracking-widest">
-          <span className="inline-block w-2 h-2 bg-jade-50 mr-2 border border-jade-100"></span>Available
-          <span className="inline-block w-2 h-2 bg-jade-900 ml-4 mr-2"></span>Selected
+        <p className="text-[10px] text-emerald-400 uppercase tracking-widest">
+          <span className="inline-block w-2 h-2 bg-emerald-50 mr-2 border border-emerald-100"></span>Available
+          <span className="inline-block w-2 h-2 bg-emerald-900 ml-4 mr-2"></span>Selected
         </p>
       </div>
     </div>
@@ -391,20 +391,20 @@ const FaqAccordion: React.FC<{ question: string; answer: string }> = ({ question
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-jade-100 last:border-0">
-      <button 
+    <div className="border-b border-emerald-100 last:border-0">
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left py-6 flex justify-between items-start group focus:outline-none"
       >
-        <span className={`font-serif text-xl pr-8 transition-colors ${isOpen ? 'text-gold-600' : 'text-jade-900 group-hover:text-jade-700'}`}>
+        <span className={`font-serif text-xl pr-8 transition-colors ${isOpen ? 'text-champagne-600' : 'text-emerald-900 group-hover:text-emerald-700'}`}>
           {question}
         </span>
-        <span className={`shrink-0 mt-1 transition-transform duration-300 text-gold-500 ${isOpen ? 'rotate-180' : ''}`}>
+        <span className={`shrink-0 mt-1 transition-transform duration-300 text-champagne-500 ${isOpen ? 'rotate-180' : ''}`}>
           <ChevronDown className="w-5 h-5" />
         </span>
       </button>
       <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-8' : 'max-h-0 opacity-0'}`}>
-        <p className="text-jade-600 text-sm leading-loose pr-8 font-sans">
+        <p className="text-emerald-600 text-sm leading-loose pr-8 font-sans">
           {answer}
         </p>
       </div>
@@ -441,21 +441,21 @@ const HomePage: React.FC = () => {
     <>
       {/* HERO */}
       <div className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-        <div className="absolute inset-0 bg-jade-900/30 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-jade-950/60 via-transparent to-jade-950/80 z-10" />
+        <div className="absolute inset-0 bg-emerald-900/30 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/60 via-transparent to-emerald-950/80 z-10" />
         <img
           src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=2670&auto=format&fit=crop"
           alt="The Great Wall of China in soft light"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="relative z-20 text-center text-white px-6 max-w-4xl pt-20">
-          <p className="text-gold-400 tracking-[0.3em] uppercase text-xs mb-6">
+          <p className="text-champagne-400 tracking-[0.3em] uppercase text-xs mb-6">
             The Middle Kingdom Reimagined
           </p>
           <h1 className="font-serif text-5xl md:text-7xl mb-6 tracking-wide leading-[1.1]">
-            Silence in the <span className="italic text-mist-200">Empire of Noise.</span>
+            Silence in the <span className="italic text-ivory-200">Empire of Noise.</span>
           </h1>
-          <p className="font-sans text-lg md:text-xl mb-8 text-mist-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sans text-lg md:text-xl mb-8 text-ivory-100 max-w-2xl mx-auto leading-relaxed">
             Hosted small group journeys through modern China for Western travellers who want depth comfort
             and clarity instead of chaos.
           </p>
@@ -465,13 +465,13 @@ const HomePage: React.FC = () => {
             <Button
               variant="outline"
               to="/collections"
-              className="!text-mist-50 !border-mist-50 hover:!bg-mist-50 hover:!text-jade-900"
+              className="!text-ivory-50 !border-ivory-50 hover:!bg-ivory-50 hover:!text-emerald-900"
             >
               Explore Collections
             </Button>
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center text-[11px] uppercase tracking-[0.2em] text-mist-200/80">
+          <div className="flex flex-wrap gap-4 justify-center text-[11px] uppercase tracking-[0.2em] text-ivory-200/80">
             <span>Hosted from arrival to departure</span>
             <span className="hidden md:inline">•</span>
             <span>Small groups · Limited departures</span>
@@ -482,12 +482,12 @@ const HomePage: React.FC = () => {
       </div>
 
       {/* TRUST STRIP */}
-      <div className="bg-white border-b border-jade-100 py-4">
+      <div className="bg-white border-b border-emerald-100 py-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4 text-xs md:text-sm">
-          <p className="uppercase tracking-[0.25em] text-jade-500">
+          <p className="uppercase tracking-[0.25em] text-emerald-500">
             Trusted by early guests from Australia United Kingdom United States and Canada
           </p>
-          <p className="text-jade-500 text-xs md:text-sm">
+          <p className="text-emerald-500 text-xs md:text-sm">
             Designed for travellers who want China to feel clear calm and well supported
           </p>
         </div>
@@ -499,20 +499,20 @@ const HomePage: React.FC = () => {
 
     {/* Header (tighter) */}
     <div className="text-center mb-10 md:mb-12">
-      <span className="text-gold-600 uppercase tracking-widest text-xs font-bold mb-2 block">
+      <span className="text-champagne-600 uppercase tracking-widest text-xs font-bold mb-2 block">
         The Reality
       </span>
 
-      <h2 className="font-serif text-3xl md:text-5xl text-jade-900 mb-4">
+      <h2 className="font-serif text-3xl md:text-5xl text-emerald-900 mb-4">
         China is extraordinary.<br />Planning it alone is exhausting.
       </h2>
 
-      <p className="text-jade-900 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+      <p className="text-emerald-900 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
         Most independent travellers hit the same three walls.
       </p>
 
       {/* Subtle divider (tighter) */}
-      <div className="h-px w-16 bg-gradient-to-r from-transparent via-jade-300 to-transparent mx-auto mt-5" />
+      <div className="h-px w-16 bg-gradient-to-r from-transparent via-emerald-300 to-transparent mx-auto mt-5" />
     </div>
 
     {/* Columns */}
@@ -521,114 +521,114 @@ const HomePage: React.FC = () => {
       {/* 01 */}
       <div
         tabIndex={0}
-        className="group relative outline-none focus-visible:ring-2 focus-visible:ring-gold-500/40 rounded-2xl"
+        className="group relative outline-none focus-visible:ring-2 focus-visible:ring-champagne-500/40 rounded-2xl"
       >
         {/* number glow */}
         <span
           className="
-            text-6xl font-serif text-jade-300 block mb-5 select-none
+            text-6xl font-serif text-emerald-300 block mb-5 select-none
             transition-all duration-300
-            group-hover:text-gold-600 group-hover:scale-[1.03]
-            group-hover:[text-shadow:0_0_18px_rgba(212,175,55,0.55)]
-            group-focus-visible:text-gold-600 group-focus-visible:scale-[1.03]
-            group-focus-visible:[text-shadow:0_0_18px_rgba(212,175,55,0.55)]
+            group-hover:text-champagne-600 group-hover:scale-[1.03]
+            group-hover:[text-shadow:0_0_18px_rgba(255,237,174,0.55)]
+            group-focus-visible:text-champagne-600 group-focus-visible:scale-[1.03]
+            group-focus-visible:[text-shadow:0_0_18px_rgba(255,237,174,0.55)]
           "
         >
           01
         </span>
 
-        <h3 className="font-serif text-2xl text-jade-900 mb-3 md:whitespace-nowrap">
+        <h3 className="font-serif text-2xl text-emerald-900 mb-3 md:whitespace-nowrap">
           Logistics Puzzle
         </h3>
 
-        <p className="text-jade-900 text-base leading-relaxed font-medium transition-transform duration-300 group-hover:-translate-y-[1px]">
+        <p className="text-emerald-900 text-base leading-relaxed font-medium transition-transform duration-300 group-hover:-translate-y-[1px]">
           What if one missed connection costs you half a day?
         </p>
 
-        <p className="text-jade-800 text-base leading-relaxed mt-3">
+        <p className="text-emerald-800 text-base leading-relaxed mt-3">
           Seats sell out, entrances cap numbers, and small delays can unravel the whole route.
         </p>
 
         {/* subtle column underline glow */}
-        <div className="mt-6 h-px w-10 bg-jade-200 mx-auto md:mx-0 transition-all duration-300 group-hover:w-16 group-hover:bg-gold-400/70" />
+        <div className="mt-6 h-px w-10 bg-emerald-200 mx-auto md:mx-0 transition-all duration-300 group-hover:w-16 group-hover:bg-champagne-400/70" />
       </div>
 
       {/* Divider */}
-      <div className="hidden md:block absolute top-10 bottom-0 left-1/3 w-px bg-jade-200" />
+      <div className="hidden md:block absolute top-10 bottom-0 left-1/3 w-px bg-emerald-200" />
 
       {/* 02 */}
       <div
         tabIndex={0}
-        className="group relative outline-none focus-visible:ring-2 focus-visible:ring-gold-500/40 rounded-2xl"
+        className="group relative outline-none focus-visible:ring-2 focus-visible:ring-champagne-500/40 rounded-2xl"
       >
         <span
           className="
-            text-6xl font-serif text-jade-300 block mb-5 select-none
+            text-6xl font-serif text-emerald-300 block mb-5 select-none
             transition-all duration-300
-            group-hover:text-gold-600 group-hover:scale-[1.03]
-            group-hover:[text-shadow:0_0_18px_rgba(212,175,55,0.55)]
-            group-focus-visible:text-gold-600 group-focus-visible:scale-[1.03]
-            group-focus-visible:[text-shadow:0_0_18px_rgba(212,175,55,0.55)]
+            group-hover:text-champagne-600 group-hover:scale-[1.03]
+            group-hover:[text-shadow:0_0_18px_rgba(255,237,174,0.55)]
+            group-focus-visible:text-champagne-600 group-focus-visible:scale-[1.03]
+            group-focus-visible:[text-shadow:0_0_18px_rgba(255,237,174,0.55)]
           "
         >
           02
         </span>
 
-        <h3 className="font-serif text-2xl text-jade-900 mb-3 md:whitespace-nowrap">
+        <h3 className="font-serif text-2xl text-emerald-900 mb-3 md:whitespace-nowrap">
           Apps &amp; Payments
         </h3>
 
-        <p className="text-jade-900 text-base leading-relaxed font-medium transition-transform duration-300 group-hover:-translate-y-[1px]">
+        <p className="text-emerald-900 text-base leading-relaxed font-medium transition-transform duration-300 group-hover:-translate-y-[1px]">
           What if your card fails and the app is in Chinese?
         </p>
 
-        <p className="text-jade-800 text-base leading-relaxed mt-3">
+        <p className="text-emerald-800 text-base leading-relaxed mt-3">
           Payments, taxis, tickets, even maps often rely on China-first apps under pressure.
         </p>
 
-        <div className="mt-6 h-px w-10 bg-jade-200 mx-auto md:mx-0 transition-all duration-300 group-hover:w-16 group-hover:bg-gold-400/70" />
+        <div className="mt-6 h-px w-10 bg-emerald-200 mx-auto md:mx-0 transition-all duration-300 group-hover:w-16 group-hover:bg-champagne-400/70" />
       </div>
 
       {/* Divider */}
-      <div className="hidden md:block absolute top-10 bottom-0 right-1/3 w-px bg-jade-200" />
+      <div className="hidden md:block absolute top-10 bottom-0 right-1/3 w-px bg-emerald-200" />
 
       {/* 03 */}
       <div
         tabIndex={0}
-        className="group relative outline-none focus-visible:ring-2 focus-visible:ring-gold-500/40 rounded-2xl"
+        className="group relative outline-none focus-visible:ring-2 focus-visible:ring-champagne-500/40 rounded-2xl"
       >
         <span
           className="
-            text-6xl font-serif text-jade-300 block mb-5 select-none
+            text-6xl font-serif text-emerald-300 block mb-5 select-none
             transition-all duration-300
-            group-hover:text-gold-600 group-hover:scale-[1.03]
-            group-hover:[text-shadow:0_0_18px_rgba(212,175,55,0.55)]
-            group-focus-visible:text-gold-600 group-focus-visible:scale-[1.03]
-            group-focus-visible:[text-shadow:0_0_18px_rgba(212,175,55,0.55)]
+            group-hover:text-champagne-600 group-hover:scale-[1.03]
+            group-hover:[text-shadow:0_0_18px_rgba(255,237,174,0.55)]
+            group-focus-visible:text-champagne-600 group-focus-visible:scale-[1.03]
+            group-focus-visible:[text-shadow:0_0_18px_rgba(255,237,174,0.55)]
           "
         >
           03
         </span>
 
-        <h3 className="font-serif text-2xl text-jade-900 mb-3 md:whitespace-nowrap">
-          Language &amp; “What Now”
+        <h3 className="font-serif text-2xl text-emerald-900 mb-3 md:whitespace-nowrap">
+          Language &amp; "What Now"
         </h3>
 
-        <p className="text-jade-900 text-base leading-relaxed font-medium transition-transform duration-300 group-hover:-translate-y-[1px]">
+        <p className="text-emerald-900 text-base leading-relaxed font-medium transition-transform duration-300 group-hover:-translate-y-[1px]">
           What if you cannot explain the problem when it matters?
         </p>
 
-        <p className="text-jade-800 text-base leading-relaxed mt-3">
+        <p className="text-emerald-800 text-base leading-relaxed mt-3">
           If plans change or things go wrong, you need someone reachable who can fix it fast.
         </p>
 
-        <div className="mt-6 h-px w-10 bg-jade-200 mx-auto md:mx-0 transition-all duration-300 group-hover:w-16 group-hover:bg-gold-400/70" />
+        <div className="mt-6 h-px w-10 bg-emerald-200 mx-auto md:mx-0 transition-all duration-300 group-hover:w-16 group-hover:bg-champagne-400/70" />
       </div>
     </div>
 
     {/* Footer (bigger + one-line on desktop) */}
-    <div className="mt-10 md:mt-12 text-center border-t border-jade-200 pt-6 max-w-4xl mx-auto">
-      <p className="text-jade-900 text-lg md:text-xl leading-snug font-medium md:whitespace-nowrap">
+    <div className="mt-10 md:mt-12 text-center border-t border-emerald-200 pt-6 max-w-4xl mx-auto">
+      <p className="text-emerald-900 text-lg md:text-xl leading-snug font-medium md:whitespace-nowrap">
         Jade Atlas Journeys turns complexity into clarity, so you can travel confidently.
       </p>
     </div>
@@ -644,10 +644,10 @@ const HomePage: React.FC = () => {
       <Section>
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center mb-4">
-            <span className="text-gold-600 uppercase tracking-widest text-xs font-bold mb-3 block">
+            <span className="text-champagne-600 uppercase tracking-widest text-xs font-bold mb-3 block">
               How We Make It Effortless
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl text-jade-900">
+            <h2 className="font-serif text-3xl md:text-4xl text-emerald-900">
               Hosted journeys built around pacing clarity and care.
             </h2>
           </div>
@@ -662,12 +662,12 @@ const HomePage: React.FC = () => {
               />
             </div>
             <div>
-              <h3 className="font-serif text-2xl text-jade-900 mb-3">Considered pacing</h3>
-              <p className="text-jade-700 text-sm md:text-base leading-relaxed mb-3">
+              <h3 className="font-serif text-2xl text-emerald-900 mb-3">Considered pacing</h3>
+              <p className="text-emerald-700 text-sm md:text-base leading-relaxed mb-3">
                 Days are shaped with space to breathe. You have time to actually feel each neighbourhood instead of
                 racing from stop to stop.
               </p>
-              <ul className="text-jade-700 text-sm space-y-1 leading-relaxed">
+              <ul className="text-emerald-700 text-sm space-y-1 leading-relaxed">
                 <li>• Fewer hotel changes and clearer flow from day to day.</li>
                 <li>• Mornings and evenings that feel calm not rushed.</li>
                 <li>• Key viewpoints repeated at different times of day when possible.</li>
@@ -678,12 +678,12 @@ const HomePage: React.FC = () => {
           {/* Row 2 */}
           <div className="grid md:grid-cols-2 gap-8 items-center md:flex-row-reverse">
             <div className="order-2 md:order-1">
-              <h3 className="font-serif text-2xl text-jade-900 mb-3">Logistics handled in the background</h3>
-              <p className="text-jade-700 text-sm md:text-base leading-relaxed mb-3">
+              <h3 className="font-serif text-2xl text-emerald-900 mb-3">Logistics handled in the background</h3>
+              <p className="text-emerald-700 text-sm md:text-base leading-relaxed mb-3">
                 The moving pieces stay invisible. Tickets transfers and timings are handled in advance so your energy
                 goes into the experience not the admin.
               </p>
-              <ul className="text-jade-700 text-sm space-y-1 leading-relaxed">
+              <ul className="text-emerald-700 text-sm space-y-1 leading-relaxed">
                 <li>• Help with essential Chinese apps before you arrive.</li>
                 <li>• Clear daily outline so you always know what happens next.</li>
                 <li>• Support if plans need to flex on the ground.</li>
@@ -708,12 +708,12 @@ const HomePage: React.FC = () => {
               />
             </div>
             <div>
-              <h3 className="font-serif text-2xl text-jade-900 mb-3">Hosts who bridge two worlds</h3>
-              <p className="text-jade-700 text-sm md:text-base leading-relaxed mb-3">
+              <h3 className="font-serif text-2xl text-emerald-900 mb-3">Hosts who bridge two worlds</h3>
+              <p className="text-emerald-700 text-sm md:text-base leading-relaxed mb-3">
                 You travel with people who understand Western expectations and the rhythm of modern China so nothing
                 feels confusing or out of reach.
               </p>
-              <ul className="text-jade-700 text-sm space-y-1 leading-relaxed">
+              <ul className="text-emerald-700 text-sm space-y-1 leading-relaxed">
                 <li>• Bilingual support for conversations and everyday situations.</li>
                 <li>• Encounters chosen for authenticity not obligation or commission.</li>
                 <li>• A familiar contact from first call to farewell dinner.</li>

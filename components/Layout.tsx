@@ -39,11 +39,11 @@ export const Button: React.FC<{
   const baseStyle = "inline-flex items-center justify-center px-8 py-3 text-xs tracking-[0.2em] uppercase transition-all duration-500 ease-out font-sans font-bold disabled:opacity-50 disabled:cursor-not-allowed";
   
   const variants = {
-    primary: "bg-jade-900 text-white border border-jade-900 hover:bg-gold-500 hover:border-gold-500 hover:text-jade-900",
-    secondary: "bg-gold-500 text-jade-900 border border-gold-500 hover:bg-white hover:border-white hover:text-jade-900",
-    outline: "bg-transparent text-mist-50 border border-mist-50 hover:bg-white hover:text-jade-900 hover:border-white",
-    "outline-dark": "bg-transparent text-jade-900 border border-jade-900 hover:bg-jade-900 hover:text-white",
-    text: "px-0 py-2 border-b border-gold-500 text-jade-900 hover:text-gold-600 hover:border-jade-900 bg-transparent"
+    primary: "bg-emerald-900 text-white border border-emerald-900 hover:bg-champagne-500 hover:border-champagne-500 hover:text-emerald-900",
+    secondary: "bg-champagne-500 text-emerald-900 border border-champagne-500 hover:bg-white hover:border-white hover:text-emerald-900",
+    outline: "bg-transparent text-ivory-50 border border-ivory-50 hover:bg-white hover:text-emerald-900 hover:border-white",
+    "outline-dark": "bg-transparent text-emerald-900 border border-emerald-900 hover:bg-emerald-900 hover:text-white",
+    text: "px-0 py-2 border-b border-champagne-500 text-emerald-900 hover:text-champagne-600 hover:border-emerald-900 bg-transparent"
   };
 
   const combinedClasses = `${baseStyle} ${variants[variant]} ${className}`;
@@ -70,19 +70,19 @@ export const TravelerCounter: React.FC<{
   max?: number;
 }> = ({ count, onChange, min = 1, max = 10 }) => {
   return (
-    <div className="flex items-center gap-4 bg-white border border-jade-200 rounded-sm px-3 py-2 shadow-sm">
-      <button 
+    <div className="flex items-center gap-4 bg-white border border-emerald-200 rounded-sm px-3 py-2 shadow-sm">
+      <button
         onClick={(e) => { e.preventDefault(); count > min && onChange(count - 1); }}
         disabled={count <= min}
-        className="w-6 h-6 flex items-center justify-center text-jade-900 hover:text-gold-600 disabled:opacity-30 transition-colors text-lg font-serif"
+        className="w-6 h-6 flex items-center justify-center text-emerald-900 hover:text-champagne-600 disabled:opacity-30 transition-colors text-lg font-serif"
       >
         -
       </button>
-      <span className="font-sans text-sm font-bold text-jade-900 w-4 text-center">{count}</span>
-      <button 
+      <span className="font-sans text-sm font-bold text-emerald-900 w-4 text-center">{count}</span>
+      <button
         onClick={(e) => { e.preventDefault(); count < max && onChange(count + 1); }}
         disabled={count >= max}
-        className="w-6 h-6 flex items-center justify-center text-jade-900 hover:text-gold-600 disabled:opacity-30 transition-colors text-lg font-serif"
+        className="w-6 h-6 flex items-center justify-center text-emerald-900 hover:text-champagne-600 disabled:opacity-30 transition-colors text-lg font-serif"
       >
         +
       </button>
@@ -115,17 +115,17 @@ export const PricingCard: React.FC<{
   };
 
   const variantStyles = {
-    light: "bg-white border border-jade-100 shadow-lg text-jade-900",
-    dark: "bg-jade-950 border border-jade-900 text-mist-50 shadow-2xl",
+    light: "bg-white border border-emerald-100 shadow-lg text-emerald-900",
+    dark: "bg-emerald-950 border border-emerald-900 text-ivory-50 shadow-2xl",
     glass: "bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-xl",
-    minimal: "bg-transparent border-l-2 border-gold-500 pl-6 text-jade-900"
+    minimal: "bg-transparent border-l-2 border-champagne-500 pl-6 text-emerald-900"
   };
 
   const textColors = {
-    light: { title: "text-jade-900", sub: "text-jade-600", label: "text-jade-400", price: "text-gold-600", divider: "border-jade-50" },
-    dark: { title: "text-mist-50", sub: "text-jade-300", label: "text-jade-500", price: "text-gold-400", divider: "border-jade-800" },
-    glass: { title: "text-white", sub: "text-mist-100", label: "text-mist-200", price: "text-white", divider: "border-white/20" },
-    minimal: { title: "text-jade-900", sub: "text-jade-600", label: "text-jade-400", price: "text-gold-600", divider: "border-jade-100" }
+    light: { title: "text-emerald-900", sub: "text-emerald-600", label: "text-emerald-400", price: "text-champagne-600", divider: "border-emerald-50" },
+    dark: { title: "text-ivory-50", sub: "text-emerald-300", label: "text-emerald-500", price: "text-champagne-400", divider: "border-emerald-800" },
+    glass: { title: "text-white", sub: "text-ivory-100", label: "text-ivory-200", price: "text-white", divider: "border-white/20" },
+    minimal: { title: "text-emerald-900", sub: "text-emerald-600", label: "text-emerald-400", price: "text-champagne-600", divider: "border-emerald-100" }
   };
   
   const c = textColors[variant];
@@ -135,15 +135,15 @@ export const PricingCard: React.FC<{
   return (
     <div className={`${variantStyles[variant]} ${isMinimal ? 'p-0' : 'p-8 md:p-10'} relative overflow-hidden transition-all duration-700 group flex flex-col h-full ${className} ${!isAvailable ? 'opacity-90' : ''}`}>
       {!isMinimal && isAvailable && (
-        <div className="absolute top-0 left-0 w-1 h-full bg-gold-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+        <div className="absolute top-0 left-0 w-1 h-full bg-champagne-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
       )}
-      
+
       <div className="relative z-10 flex flex-col h-full">
         <div className="mb-6">
            <div className="flex justify-between items-start gap-4">
              <h3 className={`font-serif text-3xl ${c.title} mb-2 leading-tight`}>{title}</h3>
              {!isAvailable && (
-               <span className="shrink-0 text-[10px] uppercase tracking-widest bg-mist-100 text-jade-600 px-2 py-1 rounded font-bold">In Curation</span>
+               <span className="shrink-0 text-[10px] uppercase tracking-widest bg-ivory-100 text-emerald-600 px-2 py-1 rounded font-bold">In Curation</span>
              )}
            </div>
           {subtitle && <p className={`text-sm font-sans leading-relaxed ${c.sub} mt-2`}>{subtitle}</p>}
@@ -167,7 +167,7 @@ export const PricingCard: React.FC<{
               </div>
               
               {isSingle && showTravelerControl && !isMinimal && (
-                <p className="text-[10px] text-gold-600 italic mb-2">
+                <p className="text-[10px] text-champagne-600 italic mb-2">
                   * Includes Single Supplement
                 </p>
               )}
@@ -208,11 +208,11 @@ const Navigation: React.FC<{ isScrolled: boolean, isMobileMenuOpen: boolean, set
   const isTransparent = isHome && !isScrolled && !isMobileMenuOpen;
   
   const navClasses = `fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out ${
-    isTransparent ? 'bg-transparent py-8' : 'bg-jade-950/95 backdrop-blur-md py-4 shadow-xl'
+    isTransparent ? 'bg-transparent py-8' : 'bg-emerald-950/95 backdrop-blur-md py-4 shadow-xl'
   }`;
 
-  const linkClasses = `text-xs uppercase tracking-[0.15em] font-bold hover:text-gold-500 transition-colors ${
-    isTransparent ? 'text-mist-50' : 'text-mist-50'
+  const linkClasses = `text-xs uppercase tracking-[0.15em] font-bold hover:text-champagne-500 transition-colors ${
+    isTransparent ? 'text-ivory-50' : 'text-ivory-50'
   }`;
 
   return (
@@ -230,9 +230,9 @@ const Navigation: React.FC<{ isScrolled: boolean, isMobileMenuOpen: boolean, set
           
           <div className="h-4 w-px bg-white/30 mx-2"></div>
           
-          <button 
-            onClick={() => setCurrency(currency === Currency.USD ? Currency.CNY : Currency.USD)} 
-            className={`flex items-center gap-2 text-xs uppercase tracking-widest hover:text-gold-500 transition-colors font-bold ${isTransparent ? 'text-white' : 'text-mist-50'}`}
+          <button
+            onClick={() => setCurrency(currency === Currency.USD ? Currency.CNY : Currency.USD)}
+            className={`flex items-center gap-2 text-xs uppercase tracking-widest hover:text-champagne-500 transition-colors font-bold ${isTransparent ? 'text-white' : 'text-ivory-50'}`}
           >
             <Globe className="w-3 h-3" />
             {currency}
@@ -247,15 +247,15 @@ const Navigation: React.FC<{ isScrolled: boolean, isMobileMenuOpen: boolean, set
           </Button>
         </div>
 
-        <button className="md:hidden z-50 text-gold-500 focus:outline-none" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button className="md:hidden z-50 text-champagne-500 focus:outline-none" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        <div className={`fixed inset-0 bg-jade-950/98 backdrop-blur-lg z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-           <Link to="/collections" className="font-serif text-4xl text-mist-50 hover:text-gold-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Collections</Link>
-           <Link to="/journal" className="font-serif text-4xl text-mist-50 hover:text-gold-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Journal</Link>
-           <Link to="/about" className="font-serif text-4xl text-mist-50 hover:text-gold-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-           <Link to="/contact" className="font-serif text-4xl text-mist-50 hover:text-gold-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+        <div className={`fixed inset-0 bg-emerald-950/98 backdrop-blur-lg z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+           <Link to="/collections" className="font-serif text-4xl text-ivory-50 hover:text-champagne-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Collections</Link>
+           <Link to="/journal" className="font-serif text-4xl text-ivory-50 hover:text-champagne-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Journal</Link>
+           <Link to="/about" className="font-serif text-4xl text-ivory-50 hover:text-champagne-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+           <Link to="/contact" className="font-serif text-4xl text-ivory-50 hover:text-champagne-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
            <div className="pt-8">
               <Button to="/book" variant="secondary" onClick={() => setIsMobileMenuOpen(false)}>Reserve Journey</Button>
            </div>
@@ -270,33 +270,33 @@ const Footer: React.FC = () => {
   const [showWeChat, setShowWeChat] = useState(false);
 
   return (
-    <footer className="bg-jade-950 text-jade-300 pt-20 border-t border-jade-900 relative">
+    <footer className="bg-emerald-950 text-emerald-300 pt-20 border-t border-emerald-900 relative">
       {/* WeChat Modal Overlay */}
       {showWeChat && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-jade-950/80 backdrop-blur-md animate-fade-in" onClick={() => setShowWeChat(false)}>
-           <div className="bg-white p-6 md:p-8 rounded-sm shadow-2xl max-w-sm w-full relative border border-jade-100 animate-fade-in-up" onClick={e => e.stopPropagation()}>
-              <button 
-                onClick={() => setShowWeChat(false)} 
-                className="absolute top-3 right-3 text-jade-400 hover:text-jade-900 transition-colors"
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-emerald-950/80 backdrop-blur-md animate-fade-in" onClick={() => setShowWeChat(false)}>
+           <div className="bg-white p-6 md:p-8 rounded-sm shadow-2xl max-w-sm w-full relative border border-emerald-100 animate-fade-in-up" onClick={e => e.stopPropagation()}>
+              <button
+                onClick={() => setShowWeChat(false)}
+                className="absolute top-3 right-3 text-emerald-400 hover:text-emerald-900 transition-colors"
               >
                  <X className="w-5 h-5" />
               </button>
               <div className="text-center">
                  <div className="flex items-center justify-center gap-2 mb-4">
-                    <span className="w-1.5 h-1.5 bg-gold-500 rounded-full"></span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-gold-600">Official WeChat</span>
+                    <span className="w-1.5 h-1.5 bg-champagne-500 rounded-full"></span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-champagne-600">Official WeChat</span>
                  </div>
-                 <h3 className="font-serif text-2xl text-jade-900 mb-2">Connect with Us</h3>
-                 <p className="text-jade-600 text-xs mb-6 leading-relaxed px-4">Scan to chat directly with our concierge team in Shanghai.</p>
-                 
-                 <div className="bg-jade-50 p-3 inline-block border border-jade-100 rounded-sm mb-4">
+                 <h3 className="font-serif text-2xl text-emerald-900 mb-2">Connect with Us</h3>
+                 <p className="text-emerald-600 text-xs mb-6 leading-relaxed px-4">Scan to chat directly with our concierge team in Shanghai.</p>
+
+                 <div className="bg-emerald-50 p-3 inline-block border border-emerald-100 rounded-sm mb-4">
                     {/* Placeholder for QR Code */}
-                    <div className="w-48 h-48 bg-white flex items-center justify-center text-jade-200 border border-jade-100">
+                    <div className="w-48 h-48 bg-white flex items-center justify-center text-emerald-200 border border-emerald-100">
                        <MessageSquare className="w-12 h-12 opacity-20" />
                     </div>
                  </div>
-                 
-                 <p className="text-[10px] text-jade-400 uppercase tracking-widest font-bold">ID: JADE_ATLAS_JOURNEYS</p>
+
+                 <p className="text-[10px] text-emerald-400 uppercase tracking-widest font-bold">ID: JADE_ATLAS_JOURNEYS</p>
               </div>
            </div>
         </div>
@@ -309,53 +309,52 @@ const Footer: React.FC = () => {
           <div className="flex flex-col space-y-8">
             {/* Brand Text */}
             <div>
-                <Link 
-                  to="/" 
-                  className="font-serif text-2xl tracking-[0.05em] text-mist-50 mb-4 whitespace-nowrap block"
+                <Link
+                  to="/"
+                  className="font-serif text-2xl tracking-[0.05em] text-ivory-50 mb-4 whitespace-nowrap block"
                 >
                   JADE ATLAS JOURNEYS
                 </Link>
-                <p className="text-xs leading-loose text-jade-500 font-sans max-w-xs">
+                <p className="text-xs leading-loose text-emerald-500 font-sans max-w-xs">
                   Curated cinematic journeys through the heart of modern and ancient China.
                 </p>
             </div>
 
             {/* Socials & WeChat */}
             <div className="flex flex-col gap-6 w-fit">
-              
+
               {/* Social Icons Row */}
               <div className="flex gap-5 items-center">
-                <a href="#" className="text-jade-400 hover:text-gold-500 transition-colors" aria-label="Instagram">
+                <a href="#" className="text-emerald-400 hover:text-champagne-500 transition-colors" aria-label="Instagram">
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-jade-400 hover:text-gold-500 transition-colors" aria-label="TikTok">
+                <a href="#" className="text-emerald-400 hover:text-champagne-500 transition-colors" aria-label="TikTok">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
                     <path d="M12.5 2h3.1c.1 1.3.7 2.6 1.6 3.6 1 1 2.3 1.6 3.6 1.7v3c-1.5 0-3-.4-4.3-1.2v7.4c0 3.6-2.8 6.5-6.3 6.5S4 20.1 4 16.5 6.8 10 10.3 10c.8 0 1.6.2 2.2.5V2zm-2.2 10.2c-1.7 0-3.2 1.5-3.2 3.3s1.4 3.3 3.2 3.3 3.2-1.5 3.2-3.3v-4c-.5-.3-1.1-.5-1.7-.5z"/>
                   </svg>
                 </a>
-                <a href="#" className="text-jade-400 hover:text-gold-500 transition-colors" aria-label="YouTube">
+                <a href="#" className="text-emerald-400 hover:text-champagne-500 transition-colors" aria-label="YouTube">
                   <Youtube className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-jade-400 hover:text-gold-500 transition-colors" aria-label="Facebook">
+                <a href="#" className="text-emerald-400 hover:text-champagne-500 transition-colors" aria-label="Facebook">
                   <Facebook className="w-5 h-5" />
                 </a>
-                <WhatsAppIcon className="w-5 h-5 text-jade-400 hover:text-gold-500 transition-colors cursor-pointer" />
+                <WhatsAppIcon className="w-5 h-5 text-emerald-400 hover:text-champagne-500 transition-colors cursor-pointer" />
               </div>
 
               {/* WeChat Button */}
-              <button 
+              <button
                 onClick={() => setShowWeChat(true)}
-                className="bg-jade-900 border border-jade-800 p-3 rounded-sm flex items-center gap-3 w-full hover:bg-jade-800 hover:border-gold-500/30 transition-all group text-left shadow-sm"
+                className="bg-emerald-900 border border-emerald-800 p-3 rounded-sm flex items-center gap-3 w-full hover:bg-emerald-800 hover:border-champagne-500/30 transition-all group text-left shadow-sm"
               >
                 <div className="w-8 h-8 bg-white flex items-center justify-center rounded-sm group-hover:opacity-90 transition-opacity shrink-0">
-                   {/* FIX: Replaced div-hack with official SVG component */}
-                   <WeChatIcon className="w-5 h-5 text-jade-900" />
+                   <WeChatIcon className="w-5 h-5 text-emerald-900" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 text-[10px] text-gold-500 font-bold uppercase tracking-widest mb-0.5">
-                    <span className="w-1.5 h-1.5 bg-gold-500 rounded-full animate-pulse"></span> WeChat
+                  <div className="flex items-center gap-2 text-[10px] text-champagne-500 font-bold uppercase tracking-widest mb-0.5">
+                    <span className="w-1.5 h-1.5 bg-champagne-500 rounded-full animate-pulse"></span> WeChat
                   </div>
-                  <div className="text-[10px] text-jade-400 group-hover:text-jade-200 transition-colors">Tap to Connect</div>
+                  <div className="text-[10px] text-emerald-400 group-hover:text-emerald-200 transition-colors">Tap to Connect</div>
                 </div>
               </button>
             </div>
@@ -363,43 +362,43 @@ const Footer: React.FC = () => {
 
           {/* COLUMN 2: EXPLORE */}
           <div className="pt-2">
-            <h4 className="text-gold-600 uppercase tracking-widest text-xs font-bold mb-8">Explore</h4>
+            <h4 className="text-champagne-600 uppercase tracking-widest text-xs font-bold mb-8">Explore</h4>
             <div className="flex flex-col space-y-4 text-sm font-medium">
-              <Link to="/collections" className="hover:text-gold-500 transition-colors hover:translate-x-1 duration-300 inline-block">Collections</Link>
-              <Link to="/journal" className="hover:text-gold-500 transition-colors hover:translate-x-1 duration-300 inline-block">Journal</Link>
-              <Link to="/about" className="hover:text-gold-500 transition-colors hover:translate-x-1 duration-300 inline-block">About Us</Link>
+              <Link to="/collections" className="hover:text-champagne-500 transition-colors hover:translate-x-1 duration-300 inline-block">Collections</Link>
+              <Link to="/journal" className="hover:text-champagne-500 transition-colors hover:translate-x-1 duration-300 inline-block">Journal</Link>
+              <Link to="/about" className="hover:text-champagne-500 transition-colors hover:translate-x-1 duration-300 inline-block">About Us</Link>
             </div>
           </div>
 
           {/* COLUMN 3: SUPPORT */}
           <div className="pt-2">
-            <h4 className="text-gold-600 uppercase tracking-widest text-xs font-bold mb-8">Support</h4>
+            <h4 className="text-champagne-600 uppercase tracking-widest text-xs font-bold mb-8">Support</h4>
             <div className="flex flex-col space-y-4 text-sm font-medium">
-              <Link to="/faq" className="hover:text-gold-500 transition-colors hover:translate-x-1 duration-300 inline-block">FAQ</Link>
-              <Link to="/contact" className="hover:text-gold-500 transition-colors hover:translate-x-1 duration-300 inline-block">Contact</Link>
-              <Link to="/account" className="hover:text-gold-500 transition-colors hover:translate-x-1 duration-300 inline-block">Guest Account</Link>
+              <Link to="/faq" className="hover:text-champagne-500 transition-colors hover:translate-x-1 duration-300 inline-block">FAQ</Link>
+              <Link to="/contact" className="hover:text-champagne-500 transition-colors hover:translate-x-1 duration-300 inline-block">Contact</Link>
+              <Link to="/account" className="hover:text-champagne-500 transition-colors hover:translate-x-1 duration-300 inline-block">Guest Account</Link>
             </div>
           </div>
 
           {/* COLUMN 4: LEGAL */}
           <div className="pt-2">
-            <h4 className="text-gold-600 uppercase tracking-widest text-xs font-bold mb-8">Legal</h4>
+            <h4 className="text-champagne-600 uppercase tracking-widest text-xs font-bold mb-8">Legal</h4>
             <div className="flex flex-col space-y-4 text-sm font-medium">
-              <Link to="/terms" className="hover:text-gold-500 transition-colors hover:translate-x-1 duration-300 inline-block">Terms of Service</Link>
-              <Link to="/bookingconditions" className="hover:text-gold-500 transition-colors hover:translate-x-1 duration-300 inline-block">Booking Conditions</Link>
-              <Link to="/privacy" className="hover:text-gold-500 transition-colors hover:translate-x-1 duration-300 inline-block">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-champagne-500 transition-colors hover:translate-x-1 duration-300 inline-block">Terms of Service</Link>
+              <Link to="/bookingconditions" className="hover:text-champagne-500 transition-colors hover:translate-x-1 duration-300 inline-block">Booking Conditions</Link>
+              <Link to="/privacy" className="hover:text-champagne-500 transition-colors hover:translate-x-1 duration-300 inline-block">Privacy Policy</Link>
             </div>
           </div>
 
         </div>
 
         {/* COPYRIGHT */}
-        <div className="mt-20 pt-8 border-t border-jade-900 flex flex-col md:flex-row justify-between items-center pb-8 gap-4">
-          <p className="text-[10px] text-jade-600 uppercase tracking-widest">
+        <div className="mt-20 pt-8 border-t border-emerald-900 flex flex-col md:flex-row justify-between items-center pb-8 gap-4">
+          <p className="text-[10px] text-emerald-600 uppercase tracking-widest">
             © 2025 Jade Atlas Journeys.
           </p>
-          <p className="text-[10px] text-jade-600 uppercase tracking-widest">
-             Designed with Imperial Precision.
+          <p className="text-[10px] text-emerald-600 uppercase tracking-widest">
+             Designed with Emerald Excellence.
           </p>
         </div>
       </div>
@@ -420,7 +419,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   }, []);
 
   return (
-    <div className="font-sans text-jade-900 bg-mist-50 min-h-screen flex flex-col">
+    <div className="font-sans text-emerald-900 bg-ivory-50 min-h-screen flex flex-col">
       <Navigation isScrolled={isScrolled} isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
       <main className="flex-grow">
         {children}
